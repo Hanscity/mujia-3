@@ -1,1 +1,43 @@
-hello,mujia~
+<view>
+    <text class="title">
+        您好，欢迎来到沐家粮油
+    </text>
+</view>
+
+<view>
+    <button class="weui-btn weui-btn_primary">
+    主操作
+    </button>
+
+    <button class="weui-btn weui-btn_primary weui-btn_disabled">
+        禁止点击
+    </button>
+
+    <button class="weui-btn weui-btn_primary weui-btn_loading">
+        <i class="weui-loading"></i>正在加载
+    </button>
+</view>
+
+
+<view class="pure_pic">
+  <image src="https://picsum.photos/200"></image>
+</view>
+
+
+<view class="swiper">
+  <swiper
+    indicator-dots="{{true}}"  
+    autoplay="{{true}}" >
+    <swiper-item>
+      <image src="https://picsum.photos/200"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://picsum.photos/250"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://picsum.photos/300"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+

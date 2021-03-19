@@ -40,4 +40,14 @@
   </swiper>
 </view>
 
+<view>
+    <text class="basketball_star">
+        {{name}}
+    </text>
+
+    <text class="curdate">
+        cur time is {{now}}
+    </text>
+</view>
+
 

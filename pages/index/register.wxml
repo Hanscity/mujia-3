@@ -1,22 +1,108 @@
 <!--pages/index/register.wxml-->
 
 <view class="main">
-
+<form action="" bindsubmit="formSubmit">
   <view class="line">
     <view>
-      <text>+86</text>
+      <text>用户名: </text>
     </view>
-
     <view>
-      <input type="text" name="phone" id="" bindinput="phoneInput" />
+      <input type="text" name="username" bindblur="usernameCheck" placeholder="请输入5~18位用户名"/>
     </view>
   </view>
 
   <!-- 分割线 -->
   <view class="hr">
+  </view>
+
+  <view class="line">
+    <view>
+      <text>密码: </text>
+    </view>
+
+    <view>
+      <input type="text" name="password" id="" bindblur="passwordCheck" placeholder="请输入6~20位密码"/>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+
+  <view class="line">
+    <view>
+      <text>确认密码: </text>
+    </view>
+
+    <view>
+      <input type="text" name="passwordConfirm" id="" bindblur="passwordConfirmCheck" placeholder="确认密码"/>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+
+
+  <view class="line">
+    <view>
+      <text>企业名: </text>
+    </view>
+
+    <view>
+      <input type="text" name="companyName" bindblur="companyNameCheck" placeholder="请输入工商注册的企业名"/>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+    
+
+  <view class="line">
+
+    <view>
+      <text>手机号</text>
+    </view>
+
+    <view>
+      <text>+86</text>
+    </view>
+
+    <view>
+      <input type="text" name="phone" id="" bindblur="phoneCheck" placeholder="请输入手机号"/>
+    </view>
 
   </view>
 
+  
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+
+  <view class="line msg_verify">
+    <!-- <view>
+      <text>短信验证码: </text>
+    </view> -->
+
+    <view>
+      <input type="text" name="codeVerify" bindblur="msgVerify"
+       placeholder="请输入短信验证码"/>
+    </view>
+
+    <view>
+    <button class="weui-btn weui-btn_primary msg_btn">
+      发送验证码
+    </button>
+  </view>
+
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+
+  
   <view class="line">
     <view>
       <icon type="success"></icon>
@@ -27,15 +113,16 @@
     </view>
   </view>
 
-<view class="line">
-  <view>
-    <button class="weui-btn weui-btn_primary" 
-    disabled="{{registerDisabled}}" bindtap="registerTap">
-      注册
-    </button>
+  <view class="line">
+    <view>
+      <button class="weui-btn weui-btn_primary" 
+      disabled="{{registerDisabled}}" bindtap="registerTap">
+        注册
+      </button>
+    </view>
   </view>
-</view>
-
+</form>
+  
 
 </view>
 

@@ -79,7 +79,7 @@ Page({
     })
 
     if (companyName.length < app.globalData.companyName.minLength 
-      || companyNam.length > app.globalData.companyName.minLength) {
+      || companyName.length > app.globalData.companyName.minLength) {
       wx.showToast({
         title: '企业名格式不正确',
         icon: 'fail',
@@ -122,7 +122,6 @@ Page({
     }
   },
 
-
   msgVerify: function (argu) {
     let codeVerify  = argu.detail.value;
 
@@ -138,8 +137,6 @@ Page({
       })
     }
   },
-
-
 
 
   registerTap: function () {
@@ -211,9 +208,83 @@ Page({
       duration: 600,
     })
     return;
+
+
   },
 
-  
+  formSubmit: function (event) {
+
+    let companyNameLength = this.data.companyName.length;
+    let checkPhone = app.checkPhone(this.data.phone);
+    let passwordLength = this.data.password.length;
+    let usernameLength = this.data.username.length;
+
+    if (usernameLength < app.globalData.username.minLength 
+      || usernameLength > app.globalData.username.maxLength) {
+      wx.showToast({
+        title: '用户名格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    }
+
+    if (passwordLength < app.globalData.password.minLength 
+      || passwordLength > app.globalData.password.maxLength) {
+      wx.showToast({
+        title: '密码格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    }
+    if (this.data.password !== this.data.passwordConfirm) {
+      wx.showToast({
+        title: '密码不相同',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    }
+
+    if ( companyNameLength < app.globalData.companyName.minLength 
+      || companyNameLength > app.globalData.companyName.maxLength) {
+      wx.showToast({
+        title: '企业名格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    }
+
+    if (!checkPhone) {
+      wx.showToast({
+        title: '手机号不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    };
+
+    if (this.data.codeVerify.length !== app.globalData.codeVerify.length) {
+      wx.showToast({
+        title: '验证码格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    };
+
+    wx.showToast({
+      title: '注册成功',
+      icon: 'success',
+      duration: 600,
+    })
+    return;
+
+
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

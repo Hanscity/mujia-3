@@ -115,8 +115,9 @@
 
   <view class="line">
     <view>
-      <button class="weui-btn weui-btn_primary" 
-      disabled="{{registerDisabled}}" bindtap="registerTap">
+      <!-- bindtap="registerTap" -->
+      <button form-type="submit" class="weui-btn weui-btn_primary" 
+      disabled="{{registerDisabled}}" >
         注册
       </button>
     </view>

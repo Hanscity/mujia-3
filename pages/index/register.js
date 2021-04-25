@@ -18,7 +18,10 @@ Page({
     companyName: '',
     phone: '',
     codeVerify: '',
-
+    /**
+     * 本地存储的字段
+     */
+    items: [],
   },
 
   usernameCheck: function (argu) {
@@ -275,10 +278,27 @@ Page({
       return;
     };
 
+    const newItem = {
+      username: this.data.username,
+      password: this.data.password,
+      passwordConfirm: this.data.passwordConfirm,
+      companyName: this.data.companyName,
+      phone: this.data.phone,
+      codeVerify: this.data.codeVerify,
+    };
+    const itemArr = [...this.data.items, newItem];
+    wx.setStorageSync('items', itemArr);
+    this.setData({ items: itemArr });
+
     wx.showToast({
       title: '注册成功',
       icon: 'success',
       duration: 600,
+      success: function () {
+        wx.navigateTo({
+          url: '/pages/index/login',
+        })
+      }
     })
     return;
 
@@ -290,9 +310,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '注册页面',
-    })
+    const itemArr = wx.getStorageSync('items') || []; 
+    this.setData({ items: itemArr });
   },
 
   /**

@@ -25,7 +25,6 @@ Page({
         loginDisabled: true
       });
     }
-    console.log(usernameInput);
   },
 
   passwordInput: function (event) {
@@ -47,23 +46,9 @@ Page({
   
   loginTap: function () {
     // 从本地缓存中获取用户信息，如果没有则设置为空数组
-    let users = wx.getStorageSync('users') || [];
-    users = [
-      {
-        username: "Jordan",
-        password: "111111"
-      },
-      {
-        username: "Kobe",
-        password: "111111"
-      },
-      {
-        username: "Iverson",
-        password: "111111"
-      },
-    ];
-
+    let users = wx.getStorageSync('items') || [];
     let userinfo = users.find(item => {
+      console.log(item);
       return item.username === this.data.usernameInput && 
       item.password === this.data.passwordInput
     });

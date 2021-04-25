@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,12 @@
         {
           "name": "pages/index/register",
           "pathName": "pages/index/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/login",
+          "pathName": "pages/index/login",
           "scene": null
         }
       ]

@@ -1,0 +1,21 @@
+/* pages/index/login.wxss */
+
+.main {
+  margin-top: 80rpx;
+  margin-left: 80rpx;
+}
+
+.main .line {
+  display: flex;
+}
+
+.main .line view {
+  margin: 15rpx;
+}
+
+.main .hr {
+  border: 1rpx solid #cccccc;
+  width: 90%;
+  margin: 0 auto;
+  opacity: 0.3;
+}

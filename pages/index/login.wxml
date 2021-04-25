@@ -1,0 +1,61 @@
+<!--pages/index/login.wxml-->
+<!-- <text>pages/index/login.wxml</text> -->
+
+<view class="main">
+  <view class="line">
+    <view>
+      用户名: 
+    </view>
+    <view>
+      <input type="text" name="" id="" placeholder="用户名/手机号" bindinput="usernameInput"/>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+
+  </view>
+
+<view class="line">
+  <view>
+    密码: 
+  </view>
+  <view>
+    <input type="password" name="" id="" placeholder="请输入密码" bindinput="passwordInput"/>
+  </view>
+</view>
+
+<!-- 分割线 -->
+<view class="hr">
+
+</view>
+
+<view class="line">
+  <view>
+    <button class="weui-btn weui-btn_primary" 
+    disabled="{{loginDisabled}}" bindtap="loginTap">
+      登录
+    </button>
+  </view>
+</view>
+
+<!--
+  其它： 注册，忘记密码
+-->
+<view class="line">
+  <view class="option">
+    <navigator url="/pages/index/register" open-type="navigate">
+      注册
+    </navigator>
+  </view>
+
+  <view class="option">
+    <navigator url="/pages/index/register" open-type="navigate">
+      忘记密码
+    </navigator>
+  </view>
+</view>
+
+</view>
+
+

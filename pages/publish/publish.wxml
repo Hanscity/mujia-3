@@ -1,0 +1,56 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class="section section_gap">
+    <view class="section__title">农贸品类:</view>
+    <radio-group name="agri_products">
+      <label>
+        <radio value="1" checked />稻米
+      </label>
+      <label>
+        <radio value="2" />小麦
+      </label>
+
+      <label>
+        <radio value="3" />玉米
+      </label>
+
+    </radio-group>
+  </view>
+
+  <view class="section">
+    <view class="section__title">品牌:</view>
+    <input name="brand" type="text"/>
+  </view>
+
+  <view class="section">
+    <view class="section__title">单价:</view>
+    <input name="unit_price" placeholder="元/吨" type="number"/>
+  </view>
+
+  <view class="section">
+    <view class="section__title">数量:</view>
+    <input name="num" placeholder="吨" type="number"/>
+  </view>
+
+  <view class="section">
+    <view class="section__title">交货地:</view>
+    <input name="trade_area" type="text"/>
+  </view>
+
+  <view class="section">
+    <view class="section__title">规格:</view>
+    <input name="spencifications" type="text"/>
+  </view>
+
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </view>
+
+</form>
+
+<view wx:if="{{isSubmit}}">
+    {{ warn ? warn : "--agri_products--" + agri_products 
+    + "--brand--" + brand + "--unit_price--" + unit_price 
+    + "--num--" + num + "--trade_area--" +trade_area + "--spencifications--" + spencifications }}
+</view>

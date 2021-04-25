@@ -1,0 +1,5 @@
+<view>
+  <text>Hello, {{name}}, age is {{age}}, are you from {{country}} ?</text>
+</view>
+
+<button bindtap="buttonHandler">Test Click</button>

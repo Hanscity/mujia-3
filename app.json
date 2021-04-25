@@ -1,12 +1,42 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/index/register",
+    "pages/index/test",
+    "pages/index/login",
+    "pages/publish/publish",
+    "pages/market/market",
+    "pages/home/home",
+    "pages/ruanyifengFour/home",
+    "pages/ruanyifengThree/home"
   ],
   "sitemapLocation": "sitemap.json",
 
   "window": {
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "沐家粮油信息"   
+    "navigationBarTitleText": "沐家农贸信息"   
+  },
+
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/market/market",
+        "text": "市场"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的"
+      }
+   ]
   }
+
 }

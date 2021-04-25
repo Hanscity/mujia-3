@@ -1,0 +1,10 @@
+<view>
+  <text class="title">hello {{name}}</text>
+  <button open-type="getUserProfile" bind:getuserprofile="buttonHandler">
+    授权获取用户个人信息aa
+  </button>
+</view>
+
+<view>
+  <navigator url="../home/home">前往发布页面</navigator>
+</view>

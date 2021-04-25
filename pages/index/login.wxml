@@ -44,6 +44,12 @@
 -->
 <view class="line">
   <view class="option">
+    <navigator url="/pages/index/registerTest" open-type="navigate">
+      注册Test
+    </navigator>
+  </view>
+
+  <view class="option">
     <navigator url="/pages/index/register" open-type="navigate">
       注册
     </navigator>

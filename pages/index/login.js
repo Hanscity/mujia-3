@@ -111,8 +111,8 @@ Page({
             icon: 'success',
             duration: 600,
             success: function () {
-              wx.navigateTo({
-                url: '/pages/index/registerIndi',
+              wx.switchTab({
+                url: '/pages/market/market',
               })
             }
           })

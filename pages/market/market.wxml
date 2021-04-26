@@ -1,4 +1,4 @@
 <view>
-  <text class="title">这是第二页</text>
+  <text class="title">这是市场页面</text>
   <navigator url="../ruanyifengFour/home">前往首页</navigator>
 </view>

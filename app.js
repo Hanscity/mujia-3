@@ -1,7 +1,11 @@
 App({
   globalData: {
     now: (new Date()).toLocaleString(),
-    
+    serverHost: "http://yaf.test",
+    code: {
+      success: 200
+    },
+
     companyName: {
       minLength: 2,
       maxLength: 64
@@ -11,7 +15,7 @@ App({
       maxLength: 20
     },
     username: {
-      minLength: 5,
+      minLength: 2,
       maxLength: 18
     },
     codeVerify: {

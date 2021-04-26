@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/login",
-    "pages/index/register",
-    "pages/index/registerTest",
+    "pages/index/registerEnter",
+    "pages/index/registerIndi",
     "pages/index/test",
     "pages/publish/publish",
     "pages/market/market",

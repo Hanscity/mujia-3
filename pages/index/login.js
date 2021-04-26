@@ -48,7 +48,6 @@ Page({
     // 从本地缓存中获取用户信息，如果没有则设置为空数组
     let users = wx.getStorageSync('items') || [];
     let userinfo = users.find(item => {
-      console.log(item);
       return item.username === this.data.usernameInput && 
       item.password === this.data.passwordInput
     });
@@ -68,7 +67,7 @@ Page({
       duration: 2000,
       success: function () {
         wx.navigateTo({
-          url: '/pages/index/register'
+          url: '/pages/index/registerIndi'
         })
       }
     })

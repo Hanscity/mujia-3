@@ -44,14 +44,14 @@
 -->
 <view class="line">
   <view class="option">
-    <navigator url="/pages/index/registerTest" open-type="navigate">
-      注册Test
+    <navigator url="/pages/index/registerIndi" open-type="navigate">
+      个人注册
     </navigator>
   </view>
 
   <view class="option">
-    <navigator url="/pages/index/register" open-type="navigate">
-      注册
+    <navigator url="/pages/index/registerEnter" open-type="navigate">
+      企业注册
     </navigator>
   </view>
 

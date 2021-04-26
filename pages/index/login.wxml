@@ -4,10 +4,10 @@
 <view class="main">
   <view class="line">
     <view>
-      用户名: 
+      手机号: 
     </view>
     <view>
-      <input type="text" name="" id="" placeholder="用户名/手机号" bindinput="usernameInput"/>
+      <input type="text" name="phone" placeholder="请输入手机号" bindblur="phoneCheck"/>
     </view>
   </view>
 
@@ -21,7 +21,8 @@
     密码: 
   </view>
   <view>
-    <input type="password" name="" id="" placeholder="请输入密码" bindinput="passwordInput"/>
+    <input type="password" placeholder="请输入密码"
+     bindblur="passwordCheck"/>
   </view>
 </view>
 

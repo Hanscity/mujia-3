@@ -140,71 +140,14 @@ Page({
     }
   },
 
-
-  registerTap: function () {
-
-    let checkPhone = app.checkPhone(this.data.phone);
-    let passwordLength = this.data.password.length;
-    let usernameLength = this.data.username.length;
-
-    if (usernameLength < app.globalData.username.minLength 
-      || usernameLength > app.globalData.username.maxLength) {
-      wx.showToast({
-        title: '用户名格式不正确',
-        icon: 'fail',
-        duration: 600,
-      })
-      return;
-    }
-
-    if (passwordLength < app.globalData.password.minLength 
-      || passwordLength > app.globalData.password.maxLength) {
-      wx.showToast({
-        title: '密码格式不正确',
-        icon: 'fail',
-        duration: 600,
-      })
-      return;
-    }
-    if (this.data.password !== this.data.passwordConfirm) {
-      wx.showToast({
-        title: '密码不相同',
-        icon: 'fail',
-        duration: 600,
-      })
-      return;
-    }
-
-    if (!checkPhone) {
-      wx.showToast({
-        title: '手机号不正确',
-        icon: 'fail',
-        duration: 600,
-      })
-      return;
-    };
-
-    if (this.data.codeVerify.length !== app.globalData.codeVerify.length) {
-      wx.showToast({
-        title: '验证码格式不正确',
-        icon: 'fail',
-        duration: 600,
-      })
-      return;
-    };
-
-    wx.showToast({
-      title: '注册成功',
-      icon: 'success',
-      duration: 600,
-    })
-    return;
-
-
-  },
-
-  formSubmit: function (event) {
   
+  formSubmit: function (event) {
+    
+    /**
+     * this.data 中有所有的数据，event 中也有所有的数据，
+     * 为了保持和上面代码的一致性，暂且都用 this.data
+     * 
+     */
     let checkPhone = app.checkPhone(this.data.phone);
     let passwordLength = this.data.password.length;
     let usernameLength = this.data.username.length;

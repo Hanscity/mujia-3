@@ -1,76 +1,126 @@
-// pages/index/login.js
+/**
+ * 用来获取全局变量 app
+ */
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    loginDisabled: true,
-    usernameInput: "",
-    passwordInput: "",
-
+    phone: '',
+    password: '',
   },
 
-  usernameInput: function (event) {
-    let usernameInput = event.detail.value;
-    if (usernameInput !== "") {
-      this.data.usernameInput = usernameInput;
-      if (this.data.passwordInput !== "") {
-        this.setData({
-          loginDisabled: false
-        });
-      }
-    } else {
-      this.setData({
-        loginDisabled: true
-      });
-    }
-  },
+  /**
+   * 
+   * 注册和登录体验的一致性，将事件统一设置为 blur
+   */
+  phoneCheck: function (argu) {
+    let phone  = argu.detail.value;
+    let checkPhone = app.checkPhone(phone);
 
-  passwordInput: function (event) {
-    let passwordInput = event.detail.value;
-    if (passwordInput !== "") {
-      this.data.passwordInput = passwordInput;
-      if (this.data.usernameInput !== "") {
-        this.setData({
-          loginDisabled: false
-        });
-      }
-    } else {
-      this.setData({
-        loginDisabled: true
-      });
-    }
-  },
-
-  
-  loginTap: function () {
-    // 从本地缓存中获取用户信息，如果没有则设置为空数组
-    let users = wx.getStorageSync('items') || [];
-    let userinfo = users.find(item => {
-      return item.username === this.data.usernameInput && 
-      item.password === this.data.passwordInput
+    this.setData({
+      phone: phone
     });
 
-    if (!userinfo) {
+    if (!checkPhone) {
       wx.showToast({
-        title: '该用户名或者密码不存在',
+        title: '手机号不正确',
         icon: 'fail',
-        duration: 2000
+        duration: 600,
+      })
+    }
+  },
+
+  passwordCheck: function (argu) {
+    let password = argu.detail.value;
+    let passwordLength = password.length;
+
+    /**
+     * 写在外面，可以避免来回修改~
+     */
+    this.setData({
+      password: password
+    })
+
+    if (passwordLength < app.globalData.password.minLength 
+      || passwordLength > app.globalData.password.maxLength) {
+      wx.showToast({
+        title: '密码格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+    }
+  },
+
+  /**
+   * bindsubmit 和 bindtap 来远程提交表单，目前两者差别不大
+   * bindtap 似乎更为简单，这里用 bindtap 吧
+   */
+  loginTap: function () {
+
+    let phone  = this.data.phone;
+    let checkPhone = app.checkPhone(phone);
+    let password = this.data.password;
+    let passwordLength = password.length;
+
+    if (!checkPhone) {
+      wx.showToast({
+        title: '手机号不正确',
+        icon: 'fail',
+        duration: 600,
       })
       return;
     }
 
-    wx.showToast({
-      title: '登录成功',
-      icon: 'success',
-      duration: 2000,
-      success: function () {
-        wx.navigateTo({
-          url: '/pages/index/registerIndi'
-        })
+    if (passwordLength < app.globalData.password.minLength 
+      || passwordLength > app.globalData.password.maxLength) {
+      wx.showToast({
+        title: '密码格式不正确',
+        icon: 'fail',
+        duration: 600,
+      })
+      return;
+    }
+
+    /**
+     * 远程数据请求
+     * 
+     */
+    const newItem = {
+      phone: this.data.phone,
+      password: this.data.password
+    };
+
+    wx.request({
+      url: app.globalData.serverHost + '/index/user/login',
+      method: "POST",
+      data: newItem,
+      success(res) {
+        
+        if (res.data.code !== app.globalData.code.success) {
+          wx.showToast({
+            title: res.data.message,
+            icon: "fail",
+          })
+        } else {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 600,
+            success: function () {
+              wx.navigateTo({
+                url: '/pages/index/registerIndi',
+              })
+            }
+          })
+        }
       }
-    })
+    });
+
+    return;
 
   },
 

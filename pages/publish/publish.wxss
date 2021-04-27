@@ -7,8 +7,9 @@
   margin-right: 20rpx;
 }
 .btn-area {
-  margin: 20rpx;
+  margin: 30rpx;
 }
-button {
-  margin: 10rpx 0;
+
+.btn-area button {
+  width: 600rpx;
 }

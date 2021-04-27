@@ -31,7 +31,15 @@ App({
   checkPhone: function (phone) {
     let reg = /^1[3-9][0-9]{9}$/;
     return reg.test(phone);
-  }
+  },
 
+  /**
+   * @comment: 判断是否是正整数，且范围是 0~999999999
+   * @return: true: 是; false: 不是;
+   */
+  judgePositiveInt: function (str) {
+    let reg = /^[0-9]{1,9}$/;
+    return reg.test(str);
+}
 
 });

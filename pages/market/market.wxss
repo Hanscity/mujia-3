@@ -1,6 +1,32 @@
-page {
-  height: 100%;
+.content {
+  width: 700rpx;
+  margin: 20rpx auto;
+}
+.market {
   width: 100%;
+}
+
+.market .header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.market .detail .top {
+  display: flex;
+}
+
+.market .detail .top view {
+  width: 50%;
+}
+
+.market .footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hr {
+  border: 1rpx solid #cccccc;
+  width: 96%;
+  margin: 0 auto;
+  opacity: 0.3;
 }

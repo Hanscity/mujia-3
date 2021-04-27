@@ -1,4 +1,33 @@
-<view>
-  <text class="title">这是市场页面</text>
-  <navigator url="../ruanyifengFour/home">前往首页</navigator>
+<view class="content">
+<block wx:for="{{items}}">
+  
+  <view class="market">
+    <view class="header">
+      <view class="left">{{item.agri_product}}</view>
+      <view class="right">¥{{item.unit_price}}元/吨</view>
+    </view>
+
+    <view class="detail">
+      <view class="top">
+        <view class="left">{{item.brand}}</view>
+        <view class="right">数量: {{item.num}}吨</view>
+      </view>
+      <view class="top">
+        <view class="left">{{item.trade_area}}</view>
+        <view class="right">{{item.specification}}</view>
+      </view>
+    </view>
+
+    <view class="footer">
+      <view class="left">Personal message</view>
+      <view class="right">{{item.created_at}}</view>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="hr">
+  </view>
+
+</block>
 </view>
+

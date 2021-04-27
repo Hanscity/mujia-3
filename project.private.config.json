@@ -33,6 +33,18 @@
         {
           "name": "pages/publish/publish",
           "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/market/market",
+          "pathName": "pages/market/market",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/test",
+          "pathName": "pages/index/test",
           "scene": null
         }
       ]

@@ -6,7 +6,10 @@
   
   <view class="market">
     <view class="header">
-      <view class="left">{{item.agri_product}}</view>
+      <view class="left">
+        <text class="buy-cell">（{{item.buy_cell_type}}）</text>
+        <text>{{item.agri_product}}</text>
+      </view>
       <view class="right">¥{{item.unit_price}}元/吨</view>
     </view>
 

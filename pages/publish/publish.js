@@ -212,14 +212,14 @@ Page({
      */
     const newItem = {
       agri_product: agriProduct,
-      buyCellType: buyCellType,
+      buy_cell_type: buyCellType,
       brand: brand,
       unit_price: unitPrice,
       num: num,
       trade_area: tradeArea,
       specification: specification
     };
-    
+
     wx.request({
       url: app.globalData.serverHost + '/index/market/add',
       method: "POST",

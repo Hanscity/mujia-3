@@ -34,6 +34,7 @@ Page({
           })
         } else {
           let items = res.data.data;
+          console.log(items);
           _this.setData({
             items: items
           });

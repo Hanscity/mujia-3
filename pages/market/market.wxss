@@ -12,6 +12,19 @@
   line-height: 96rpx;
 }
 
+.market .header .left .buy-cell {
+  /* 
+    display: inline-block; 
+      这里面不得不说一下，这里的 text 元素和 HTML 的 span 元素（行内元素）还是稍有区别
+      这里的 text 元素竟然带有行内块元素的特性，不用设置。如果设置，反而不妙~
+  */
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 30rpx;
+  background-color: rgba(255, 0, 0, .2);
+  border-radius: 30%;
+}
+
 .market .header .right {
   color: red;
 }

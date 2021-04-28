@@ -9,19 +9,33 @@
 .market .header {
   display: flex;
   justify-content: space-between;
+  line-height: 96rpx;
 }
 
-.market .detail .top {
+.market .header .right {
+  color: red;
+}
+
+
+.market .detail .show {
   display: flex;
+  font-size: 30rpx;
+  color: #808080;
+  line-height: 60rpx;
+
 }
 
-.market .detail .top view {
+.market .detail .show  view {
   width: 50%;
 }
 
 .market .footer {
   display: flex;
   justify-content: space-between;
+  font-size: 30rpx;
+
+  color: #808080;
+  line-height: 70rpx;
 }
 
 .hr {
@@ -29,4 +43,12 @@
   width: 96%;
   margin: 0 auto;
   opacity: 0.3;
+}
+
+.hr-strong {
+  border: 1rpx solid #cccccc;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0.6;
+  box-shadow: 0 0 4rpx 4rpx rgba(0, 0, 0, .1);
 }

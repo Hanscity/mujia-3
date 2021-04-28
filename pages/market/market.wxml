@@ -1,4 +1,7 @@
 <view class="content">
+  <!-- 分割线 -->
+  <view class="hr-strong">
+  </view>
 <block wx:for="{{items}}">
   
   <view class="market">
@@ -7,17 +10,21 @@
       <view class="right">¥{{item.unit_price}}元/吨</view>
     </view>
 
-    <view class="detail">
-      <view class="top">
-        <view class="left">{{item.brand}}</view>
-        <view class="right">数量: {{item.num}}吨</view>
-      </view>
-      <view class="top">
-        <view class="left">{{item.trade_area}}</view>
-        <view class="right">{{item.specification}}</view>
-      </view>
+    <!-- 分割线 -->
+    <view class="hr">
     </view>
 
+    <view class="detail">
+      <view class="show top">
+        <view class="left">品牌：{{item.brand}}</view>
+        <view class="right">数量：{{item.num}}吨</view>
+      </view>
+      <view class="show bottom">
+        <view class="left">交货地：{{item.trade_area}}</view>
+        <view class="right">规格：{{item.specification}}</view>
+      </view>
+    </view>
+    
     <view class="footer">
       <view class="left">Personal message</view>
       <view class="right">{{item.created_at}}</view>
@@ -25,7 +32,7 @@
   </view>
 
   <!-- 分割线 -->
-  <view class="hr">
+  <view class="hr-strong">
   </view>
 
 </block>

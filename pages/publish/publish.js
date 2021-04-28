@@ -2,7 +2,7 @@ let app = getApp();
 Page({
   data: {
    
-    agriProduct: 1,
+    buyCellType: 1,
     brand: "",
     unitPrice: "",
     num: "",
@@ -55,11 +55,14 @@ Page({
 
   },
 
-  productSelect: function (event) {
-    
-    let agriProduct = event.detail.value;
+  /**
+   * @comment 操作类型： 买或者卖
+   * @param {} event 
+   */
+  buycelltypeChange: function (event) {
+    let buyCellType = event.detail.value;
     this.setData({
-      agriProduct: agriProduct
+      buyCellType: buyCellType
     })
   },
 
@@ -149,6 +152,7 @@ Page({
   marketPublishTap: function (event) {
 
     let agriProduct = this.data.indexs; // 农贸品类下拉框
+    let buyCellType = this.data.buyCellType;
     let brand = this.data.brand;
     let brandLength = brand.length;
     let unitPrice = this.data.unitPrice;
@@ -208,13 +212,14 @@ Page({
      */
     const newItem = {
       agri_product: agriProduct,
+      buyCellType: buyCellType,
       brand: brand,
       unit_price: unitPrice,
       num: num,
       trade_area: tradeArea,
       specification: specification
     };
-    console.log(newItem);
+    
     wx.request({
       url: app.globalData.serverHost + '/index/market/add',
       method: "POST",

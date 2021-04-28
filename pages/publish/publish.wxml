@@ -19,9 +19,9 @@
 
   <view class="section">
     <view class="section__title">操作:</view>
-    <radio-group name="oper" bindchange="">
+    <radio-group name="buyCellType" bindchange="buycelltypeChange">
       <label>
-        <radio value="1" checked />买
+        <radio value="1" checked/>买
       </label>
       <label>
         <radio value="2" />卖

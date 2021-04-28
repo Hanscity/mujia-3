@@ -1,19 +1,29 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
 
-  <view class="section section_gap">
+  <view class="section">
     <view class="section__title">农贸品类:</view>
     <radio-group name="agri_product" bindchange="productSelect">
       <label>
-        <radio value="1" checked />稻米
+        <radio value="1" checked />稻谷
       </label>
       <label>
-        <radio value="2" />小麦
+        <radio value="2" />大米
       </label>
-
       <label>
-        <radio value="3" />玉米
+        <radio value="3" />小麦
       </label>
+    </radio-group>
+  </view>
 
+  <view class="section">
+    <view class="section__title">操作:</view>
+    <radio-group name="oper" bindchange="">
+      <label>
+        <radio value="1" checked />买
+      </label>
+      <label>
+        <radio value="2" />卖
+      </label>
     </radio-group>
   </view>
 

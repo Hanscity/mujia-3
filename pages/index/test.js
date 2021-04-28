@@ -1,39 +1,30 @@
 Page({
+  /**
+   * 页面的初始数据
+   */
   data: {
-    objectArray: [
-      {id: 5, unique: 'unique_5'},
-      {id: 4, unique: 'unique_4'},
-      {id: 3, unique: 'unique_3'},
-      {id: 2, unique: 'unique_2'},
-      {id: 1, unique: 'unique_1'},
-      {id: 0, unique: 'unique_0'},
-    ],
-    numberArray: [1, 2, 3, 4]
+    shows: false, //控制下拉列表的显示隐藏，false隐藏、true显示
+    selectDatas: ['稻谷', '大米', '稻米副产品',  '小麦', '小麦副产品', 
+                  '玉米', '玉米副产品', '大豆', '大豆副产品', 
+                  '杂粮', '杂粮副产品'], //下拉列表的数据
+    indexs: 0, //选择的下拉列 表下标,
   },
-  switch: function(e) {
-    const length = this.data.objectArray.length
-    for (let i = 0; i < length; ++i) {
-      const x = Math.floor(Math.random() * length)
-      const y = Math.floor(Math.random() * length)
-      const temp = this.data.objectArray[x]
-      this.data.objectArray[x] = this.data.objectArray[y]
-      this.data.objectArray[y] = temp
-    }
+
+  // 点击下拉显示框
+  selectTaps() {
     this.setData({
-      objectArray: this.data.objectArray
-    })
+      shows: !this.data.shows,
+    });
   },
-  addToFront: function(e) {
-    const length = this.data.objectArray.length
-    this.data.objectArray = [{id: length, unique: 'unique_' + length}].concat(this.data.objectArray)
+  // 点击下拉列表
+  optionTaps(e) {
+    let Indexs = e.currentTarget.dataset.index; //获取点击的下拉列表的下标
+    console.log(Indexs)
     this.setData({
-      objectArray: this.data.objectArray
-    })
+      indexs: Indexs,
+      shows: !this.data.shows
+    });
   },
-  addNumberToFront: function(e){
-    this.data.numberArray = [ this.data.numberArray.length + 1 ].concat(this.data.numberArray)
-    this.setData({
-      numberArray: this.data.numberArray
-    })
-  }
+
+
 })

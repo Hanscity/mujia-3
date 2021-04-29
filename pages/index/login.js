@@ -106,6 +106,11 @@ Page({
             icon: "fail",
           })
         } else {
+          
+          let token = res.data.data.token;
+          // 暂且存在 storage 中
+          wx.setStorageSync('token', token);
+          
           wx.showToast({
             title: '成功',
             icon: 'success',

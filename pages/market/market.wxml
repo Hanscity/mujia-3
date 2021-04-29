@@ -1,8 +1,9 @@
 <view class="content">
-  <!-- 分割线 -->
-  <view class="hr-strong">
-  </view>
-<block wx:for="{{items}}">
+  
+<!--
+  暂且不知 wx:key="unique" 的作用，只是不想让程序 warning
+-->
+<block wx:for="{{items}}" wx:key="unique">
   
   <view class="market">
     <view class="header">

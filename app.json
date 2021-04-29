@@ -27,15 +27,21 @@
     "list": [
       {
         "pagePath": "pages/market/market",
-        "text": "市场"
+        "text": "市场",
+        "iconPath": "pages/images/market.png",
+        "selectedIconPath": "pages/images/marketSelected.png"
       },
       {
         "pagePath": "pages/publish/publish",
-        "text": "发布"
+        "text": "发布",
+        "iconPath": "pages/images/publish.png",
+        "selectedIconPath": "pages/images/publishSelected.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "pages/images/me.png",
+        "selectedIconPath": "pages/images/meSelected.png"
       }
    ]
   }

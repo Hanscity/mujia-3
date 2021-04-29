@@ -210,6 +210,7 @@ Page({
      * 远程数据请求
      * 
      */
+    let token = wx.getStorageSync('token') || '';
     const newItem = {
       agri_product: agriProduct,
       buy_cell_type: buyCellType,
@@ -217,7 +218,8 @@ Page({
       unit_price: unitPrice,
       num: num,
       trade_area: tradeArea,
-      specification: specification
+      specification: specification,
+      token: token
     };
 
     wx.request({

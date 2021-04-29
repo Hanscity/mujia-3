@@ -30,7 +30,7 @@
     </view>
     
     <view class="footer">
-      <view class="left">Personal message</view>
+      <view class="left">{{item.user_info.user_name}}</view>
       <view class="right">{{item.created_at}}</view>
     </view>
   </view>

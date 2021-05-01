@@ -241,6 +241,13 @@ Page({
             success: function () {
               wx.switchTab({
                 url: '/pages/market/market',
+                success: function (res) {
+                  let page = getCurrentPages().pop();
+                  if (page == undefined || page == null) {
+                    return;
+                  }
+                  page.onLoad();
+                }
               })
             }
           })

@@ -1,7 +1,9 @@
 App({
   globalData: {
     now: (new Date()).toLocaleString(),
-    serverHost: "https://api.mujia.online",
+    // https://api.mujia.online
+    // http://yaf.test
+    serverHost: "http://yaf.test",
     code: {
       success: 200
     },

@@ -20,8 +20,6 @@ Page({
     let _this = this;
     // 取出 storage  中的 token
     let token = wx.getStorageSync('token') || '';
-
-
     /**
      * 远程数据请求
      */
@@ -84,10 +82,14 @@ Page({
    */
   onPullDownRefresh: function () {
     let _this = this;
+    // 取出 storage  中的 token
+    let token = wx.getStorageSync('token') || '';
     /**
      * 远程数据请求
      */
-    const newItem = {};
+    let newItem = {};
+    newItem.token = token;
+    console.log(newItem);
     wx.request({
       url: app.globalData.serverHost + '/index/market/list',
       method: "POST",
@@ -100,6 +102,7 @@ Page({
           })
         } else {
           let items = res.data.data;
+          console.log(items);
           _this.setData({
             items: items
           });
@@ -114,7 +117,7 @@ Page({
    * 目前理解为下一页
    */
   onReachBottom: function () {
-    
+    console.log('next page..');
   },
 
   /**
